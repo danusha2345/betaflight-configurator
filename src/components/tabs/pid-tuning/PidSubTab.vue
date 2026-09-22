@@ -1069,7 +1069,7 @@
                  mirrors the classic PID Settings box grouping multiple sub-sections together -->
             <UiBox v-if="isAdrcActive" :title="$t('pidTuningAdrcSettings')" type="neutral">
                 <div
-                    v-for="group in adrcOtherFieldGroups"
+                    v-for="group in adrcVisibleFieldGroups"
                     :key="group.titleKey"
                     class="flex flex-col gap-2 mt-2 first:mt-0"
                 >
@@ -1618,7 +1618,7 @@ const adrcFieldGroups = [
             },
         ],
     },
-    // The three groups below exist on the tester builds from b11 on (betaflight#15400 discussion,
+    // The two groups below exist on the tester builds from b11 on (betaflight#15400 discussion,
     // ADRC-032/033); "optional" hides a field the connected firmware does not have instead of
     // failing the whole panel.
     {
@@ -1679,6 +1679,10 @@ const adrcFields = reactive(
             { value: 0, min: 0, max: 65535, saving: false, values: [], available: true },
         ]),
     ),
+);
+// Hide a group whose fields the connected firmware has none of (e.g. the b11 groups on a b10.1 board).
+const adrcVisibleFieldGroups = computed(() =>
+    adrcOtherFieldGroups.filter((group) => group.fields.some((f) => adrcFields[f.name].available)),
 );
 const adrcLoaded = ref(false);
 const adrcLoading = ref(false);
