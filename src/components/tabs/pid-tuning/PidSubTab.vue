@@ -1618,8 +1618,8 @@ const adrcFieldGroups = [
             },
         ],
     },
-    // The two groups below exist on the tester builds from b11 on (betaflight#15400 discussion,
-    // ADRC-032/033); "optional" hides a field the connected firmware does not have instead of
+    // The group below exists on the tester builds from b11 on (betaflight#15400 discussion,
+    // ADRC-033); "optional" hides a field the connected firmware does not have instead of
     // failing the whole panel.
     {
         titleKey: "pidTuningAdrcGroupSaturation",
@@ -1630,30 +1630,6 @@ const adrcFieldGroups = [
                 labelKey: "pidTuningAdrcSatZ3Inhibit",
                 helpKey: "pidTuningAdrcSatZ3InhibitHelp",
                 lookup: true,
-                optional: true,
-            },
-        ],
-    },
-    {
-        titleKey: "pidTuningAdrcGroupDamping",
-        titleHelpKey: "pidTuningAdrcGroupDampingHelp",
-        fields: [
-            {
-                name: "adrc_zeta_roll",
-                labelKey: "pidTuningAdrcZetaRoll",
-                helpKey: "pidTuningAdrcZetaHelp",
-                optional: true,
-            },
-            {
-                name: "adrc_zeta_pitch",
-                labelKey: "pidTuningAdrcZetaPitch",
-                helpKey: "pidTuningAdrcZetaHelp",
-                optional: true,
-            },
-            {
-                name: "adrc_zeta_yaw",
-                labelKey: "pidTuningAdrcZetaYaw",
-                helpKey: "pidTuningAdrcZetaHelp",
                 optional: true,
             },
         ],

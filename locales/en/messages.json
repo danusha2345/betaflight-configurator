@@ -2495,30 +2495,6 @@
         "message": "ON: while the mixer clipped on the previous loop, the disturbance estimate z3 may only move toward zero — the same rule the liftoff gate applies on the ground. Removes the all-axis integrator wind-up behind the whoop 'yaw washout'. Opt-in (default OFF); no effect on a craft whose mixer never clips.",
         "description": "adrc_sat_z3_inhibit help"
     },
-    "pidTuningAdrcGroupDamping": {
-        "message": "Damping Ratio",
-        "description": "Group title for adrc_zeta_*"
-    },
-    "pidTuningAdrcGroupDampingHelp": {
-        "message": "Per-axis damping ratio ζ of the virtual PD: D = 2·ζ·wc·z2/b0. 100 = critical damping (the original law).",
-        "description": "Group help for the damping-ratio group"
-    },
-    "pidTuningAdrcZetaRoll": {
-        "message": "ζ Roll (%)",
-        "description": "Label for adrc_zeta_roll"
-    },
-    "pidTuningAdrcZetaPitch": {
-        "message": "ζ Pitch (%)",
-        "description": "Label for adrc_zeta_pitch"
-    },
-    "pidTuningAdrcZetaYaw": {
-        "message": "ζ Yaw (%)",
-        "description": "Label for adrc_zeta_yaw"
-    },
-    "pidTuningAdrcZetaHelp": {
-        "message": "Damping ratio in percent, 0–200. 100 leaves the control law unchanged; 0 removes the D path on that axis (classic PID yaw runs with D = 0). Lets yaw wc rise without yaw D rising with it. Experimental; no measurable benefit shown yet.",
-        "description": "adrc_zeta_* help"
-    },
     "pidTuningAdrcB0ScaleMax": {
         "message": "b0 Scale Max",
         "description": "ADRC ceiling on the throttle-scaled b0 multiplier"
